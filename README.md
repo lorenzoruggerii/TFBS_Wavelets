@@ -41,7 +41,7 @@ pip install -r requirements.txt
 Extract sequences from **positive/negative BED files** and create train/test FASTA:
 
 ```bash
-python dataset_split.py <path/to/positive/> <path/to/negative/> <path/to/genome.fa>
+python dataset_split.py path/to/positive_bed path/to/negative_bed path/to/genome.fa
 ```
 
 ### 2. Generate Wavelet Colormaps
@@ -49,7 +49,7 @@ python dataset_split.py <path/to/positive/> <path/to/negative/> <path/to/genome.
 Transform DNA sequences into colormap images using wavelet transforms:
 
 ```bash
-python create_colormaps_TFBS_parallel.py <fastafile>, <outdir>, <synchrosqueeze>, <prefix>, <threshold>, <num_workers>
+python create_colormaps_TFBS_parallel.py /path/to/fastafile output_dir synchrosqueeze_flag prefix threshold num_workers
 ```
 The script implements the following **pipeline**:
 
@@ -68,7 +68,7 @@ python train_resnet.py
 Visualize **activation maps** from the ResNet model:
 
 ```bash
-python xai_grid_cam.py xai_grid_cam.py <input_dir> <output_dir> <gif_flag> \[<max_sequences>\] \[<gif_output_dir>\]
+python xai_grid_cam.py xai_grid_cam.py input_dir output_dir gif_flag [max_sequences] [gif_output_dir]
 ```
 
 Example of activation maps:
@@ -87,7 +87,7 @@ In such regions is where TF binds most frequently.
 Generate PWM from highly activated sequence regions (in progress for now):
 
 ```bash
-python extract_pwm.py <image_dir> <fastafile> <outdir>  \[<num_sequences>\]
+python extract_pwm.py path/to/images /path/to/fastafile output_dir [num_sequences]
 ```
 
 ### Extra: Images Visualization
