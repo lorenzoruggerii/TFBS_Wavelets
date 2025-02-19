@@ -1,9 +1,9 @@
 # &#x20;Transcription Factor Binding Site Detection using Wavelet Transforms
-<img src="images/layers_activations.gif" alt="drawing" width="1000" height="800"/>
+<img src="images/layers_activations_crop.gif" alt="drawing" width="1000" height="800"/>
 
 ## Overview
 
-This repository provides a pipeline for **Transcription Factor Binding Site (TFBS) detection** using **wavelet transforms** and deep learning. The workflow includes:
+This repository provides a pipeline for **Transcription Factor Binding Site (TFBS) detection** using **wavelet transforms** and deep learning. The pipeline was run on [CTCF ChIP-seq data](https://www.encodeproject.org/files/ENCFF796WRU/) obtained from ENCODE. The workflow includes:
 
 - Extracting DNA sequences from **BED files**.
 - Generating **wavelet colormaps** from sequences.
@@ -41,7 +41,7 @@ pip install -r requirements.txt
 Extract sequences from **positive/negative BED files** and create train/test FASTA:
 
 ```bash
-python dataset_split.py \<path/to/positive/\> \<path/to/negative/\> \<path/to/genome.fa\>
+python dataset_split.py <path/to/positive/> <path/to/negative/> <path/to/genome.fa>
 ```
 
 ### 2. Generate Wavelet Colormaps
@@ -49,8 +49,10 @@ python dataset_split.py \<path/to/positive/\> \<path/to/negative/\> \<path/to/ge
 Transform DNA sequences into colormap images using wavelet transforms:
 
 ```bash
-python create_colormaps_TFBS_parallel.py \<fastafile\>, \<outdir\>, \<synchrosqueeze\>, \<prefix\>, \<threshold\>, \<num_workers\>
+python create_colormaps_TFBS_parallel.py <fastafile>, <outdir>, <synchrosqueeze>, <prefix>, <threshold>, <num_workers>
 ```
+The script implements the following pipeline
+![pipeline](images/pipeline_TFBS.png)
 
 ### 3. Train ResNet Model
 
@@ -65,7 +67,7 @@ python train_resnet.py
 Visualize **activation maps** from the ResNet model:
 
 ```bash
-python xai_grid_cam.py xai_grid_cam.py \<input_dir\> \<output_dir\> \<gif_flag\> \[\<max_sequences\>\] \[\<gif_output_dir\>\]
+python xai_grid_cam.py xai_grid_cam.py <input_dir> <output_dir> <gif_flag> \[<max_sequences>\] \[<gif_output_dir>\]
 ```
 
 Example of activation maps:
@@ -82,7 +84,7 @@ In such regions is where TF binds most frequently.
 Generate PWM from highly activated sequence regions (in progress for now):
 
 ```bash
-python extract_pwm.py \<image_dir\> \<fastafile\> \<outdir\>  \[\<num_sequences\>\]
+python extract_pwm.py <image_dir> <fastafile> <outdir>  \[<num_sequences>\]
 ```
 
 ### Extra: Images Visualization
