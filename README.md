@@ -1,5 +1,5 @@
 # &#x20;Transcription Factor Binding Site Detection using Wavelet Transforms
-<img src="images/layers_activations_crop.gif" alt="drawing" width="1000" height="800"/>
+<img src="images/layers_activation_crop.gif" alt="drawing" width="1000" height="800"/>
 
 ## Overview
 
@@ -51,7 +51,8 @@ Transform DNA sequences into colormap images using wavelet transforms:
 ```bash
 python create_colormaps_TFBS_parallel.py <fastafile>, <outdir>, <synchrosqueeze>, <prefix>, <threshold>, <num_workers>
 ```
-The script implements the following pipeline
+The script implements the following **pipeline**:
+
 ![pipeline](images/pipeline_TFBS.png)
 
 ### 3. Train ResNet Model
@@ -71,10 +72,12 @@ python xai_grid_cam.py xai_grid_cam.py <input_dir> <output_dir> <gif_flag> \[<ma
 ```
 
 Example of activation maps:
+
 ![Activation maps](images/Layer_2_subplots.png)
 
 The activation maps for CNN layers resembles what found for the same TF (CTCF) using SVMs, focusing on the center of the sequences.
 In such regions is where TF binds most frequently.
+
 ![Activation maps SVM](images/CTCF_SVM_heatmap.png)
 
 
