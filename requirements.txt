@@ -1,0 +1,14 @@
+grad_cam==1.5.4
+imageio==2.37.0
+matplotlib==3.10.0
+natsort==8.4.0
+numpy==2.2.3
+pandas==2.2.3
+Pillow==11.1.0
+pybedtools==0.11.0
+scikit_learn==1.6.1
+ssqueezepy==0.6.5
+torch==2.6.0
+torchvision==0.21.0
+tqdm==4.67.1
+wandb==0.19.6
