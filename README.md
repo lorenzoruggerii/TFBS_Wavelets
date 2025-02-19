@@ -1,5 +1,5 @@
 # &#x20;Transcription Factor Binding Site Detection using Wavelet Transforms
-![TFBS Detection](./images/layers_activation.gif)
+<img src="images/layers_activations.gif" alt="drawing" width="1000" height="800"/>
 
 ## Overview
 
@@ -67,6 +67,15 @@ Visualize **activation maps** from the ResNet model:
 ```bash
 python xai_grid_cam.py xai_grid_cam.py \<input_dir\> \<output_dir\> \<gif_flag\> \[\<max_sequences\>\] \[\<gif_output_dir\>\]
 ```
+
+Example of activation maps:
+![Activation maps](images/Layer_2_subplots.png)
+
+The activation maps for CNN layers resembles what found for the same TF (CTCF) using SVMs, focusing on the center of the sequences.
+In such regions is where TF binds most frequently.
+![Activation maps SVM](images/CTCF_SVM_heatmap.png)
+
+
 
 ### 5. Extract Position Weight Matrices (PWM)
 
