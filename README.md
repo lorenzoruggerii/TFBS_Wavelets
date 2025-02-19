@@ -1,5 +1,5 @@
 # &#x20;Transcription Factor Binding Site Detection using Wavelet Transforms
-<img src="images/layers_activation_crop.gif" alt="drawing" width="1000" height="800"/>
+<img src="images/layers_activations.gif" alt="drawing" width="1000" height="800"/>
 
 ## Overview
 
