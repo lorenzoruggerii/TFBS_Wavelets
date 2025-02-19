@@ -68,7 +68,7 @@ python train_resnet.py
 Visualize **activation maps** from the ResNet model:
 
 ```bash
-python xai_grid_cam.py xai_grid_cam.py input_dir output_dir gif_flag [max_sequences] [gif_output_dir]
+python xai_grid_cam.py input_dir output_dir gif_flag [max_sequences] [gif_output_dir]
 ```
 
 Example of activation maps:
