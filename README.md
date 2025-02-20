@@ -1,6 +1,9 @@
 # &#x20;Transcription Factor Binding Site Detection using Wavelet Transforms
 <img src="images/layers_activations.gif" alt="drawing" width="1000" height="800"/>
 
+I've written an article about this project on Medium: [Read it here](https://medium.com/@lorenzo.ruggeri37/deciphering-transcription-factor-binding-sites-with-wavelet-transforms-and-deep-learning-6a100d79fb82)
+
+
 ## Overview
 
 This repository provides a pipeline for **Transcription Factor Binding Site (TFBS) detection** using **wavelet transforms** and deep learning. The pipeline was run on [CTCF ChIP-seq data](https://www.encodeproject.org/files/ENCFF796WRU/) obtained from ENCODE. The workflow includes:
